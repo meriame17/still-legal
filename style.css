@@ -1,0 +1,446 @@
+/* STILL legal site: shared design system. No external fonts, scripts, or requests. */
+
+:root {
+  --cream: #f8f7f4;
+  --sage: #a8bfa8;
+  --sage-soft: #e6eee6;
+  --ink: #26352f;
+  --muted: #5a6962;
+  --line: #dde3db;
+  --lavender: #c8bce5;
+  --peach: #f1d5c8;
+  --serif: Georgia, "Iowan Old Style", "Palatino Linotype", Palatino, "Times New Roman", serif;
+  --sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--cream);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 1.0625rem;
+  line-height: 1.7;
+}
+
+.wrap {
+  width: 100%;
+  max-width: 42rem;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+a {
+  color: var(--ink);
+  text-decoration: underline;
+  text-decoration-color: var(--sage);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.2em;
+}
+
+a:hover {
+  text-decoration-color: var(--ink);
+}
+
+a:focus-visible {
+  outline: 3px solid var(--sage);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* Header */
+
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-top: 1.75rem;
+  padding-bottom: 1rem;
+}
+
+.brand {
+  font-family: var(--sans);
+  font-size: 0.9rem;
+  letter-spacing: 0.32em;
+  text-decoration: none;
+}
+
+.lang {
+  display: flex;
+  gap: 0.25rem;
+  padding: 0.2rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  font-size: 0.875rem;
+}
+
+.lang a {
+  padding: 0.2rem 0.85rem;
+  border-radius: 999px;
+  color: var(--muted);
+  text-decoration: none;
+}
+
+.lang a[aria-current="true"],
+.lang a[aria-current="page"] {
+  background: var(--sage);
+  color: var(--ink);
+}
+
+.lang a:hover {
+  color: var(--ink);
+}
+
+/* Document navigation */
+
+.doc-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1.25rem;
+  margin: 0.5rem 0 0;
+  padding: 0 0 1.25rem;
+  border-bottom: 1px solid var(--line);
+  list-style: none;
+  font-size: 0.9375rem;
+}
+
+.doc-nav a {
+  color: var(--muted);
+  text-decoration: none;
+  padding: 0.25rem 0;
+  border-bottom: 2px solid transparent;
+}
+
+.doc-nav a:hover {
+  color: var(--ink);
+  border-bottom-color: var(--sage);
+}
+
+.doc-nav a[aria-current="page"] {
+  color: var(--ink);
+  border-bottom-color: var(--sage);
+}
+
+/* Main content */
+
+main {
+  flex: 1;
+  padding-bottom: 4rem;
+}
+
+.eyebrow {
+  margin: 3rem 0 0;
+  color: var(--muted);
+  font-size: 0.8125rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--serif);
+  font-weight: 500;
+  color: var(--ink);
+}
+
+h1 {
+  margin: 0.5rem 0 0;
+  font-size: clamp(2rem, 6vw, 2.75rem);
+  line-height: 1.15;
+}
+
+h2 {
+  margin: 2.75rem 0 0;
+  font-size: 1.5rem;
+  line-height: 1.3;
+}
+
+h3 {
+  margin: 1.75rem 0 0;
+  font-size: 1.125rem;
+}
+
+p,
+ul,
+ol {
+  margin: 0.9rem 0 0;
+}
+
+ul,
+ol {
+  padding-left: 1.4rem;
+}
+
+li {
+  margin-top: 0.4rem;
+}
+
+li::marker {
+  color: var(--sage);
+}
+
+.meta {
+  margin-top: 1rem;
+  color: var(--muted);
+  font-size: 0.9375rem;
+}
+
+/* Draft banner, drafting notes, and placeholders */
+
+.draft {
+  margin: 1.75rem 0 0;
+  padding: 1rem 1.25rem;
+  border: 1px solid #e4bba9;
+  border-radius: 1rem;
+  background: var(--peach);
+  font-size: 0.9375rem;
+  line-height: 1.6;
+}
+
+.draft strong {
+  display: block;
+  margin-bottom: 0.25rem;
+  font-family: var(--sans);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.8125rem;
+}
+
+.note {
+  margin: 1.1rem 0 0;
+  padding: 0.85rem 1.1rem;
+  border-left: 4px solid var(--sage);
+  border-radius: 0 0.75rem 0.75rem 0;
+  background: var(--sage-soft);
+  color: var(--ink);
+  font-size: 0.9375rem;
+  line-height: 1.6;
+}
+
+.note b {
+  font-weight: 600;
+}
+
+.ph {
+  padding: 0.05em 0.4em;
+  border: 1px dashed var(--sage);
+  border-radius: 0.4em;
+  background: var(--sage-soft);
+  font-size: 0.95em;
+  white-space: normal;
+}
+
+/* Home */
+
+.home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding-top: 4.5rem;
+}
+
+.wordmark {
+  margin: 0;
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: clamp(3rem, 14vw, 5rem);
+  letter-spacing: 0.28em;
+  /* Balances the trailing letter-spacing so the word sits centered. */
+  padding-left: 0.28em;
+  line-height: 1;
+}
+
+.tagline {
+  margin: 1.25rem 0 0;
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 1.375rem;
+  color: var(--muted);
+}
+
+.pane-title {
+  margin: 3.25rem 0 0;
+  color: var(--muted);
+  font-size: 0.8125rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.link-list {
+  width: 100%;
+  max-width: 26rem;
+  margin: 1.5rem auto 0;
+  padding: 0;
+  list-style: none;
+  text-align: left;
+}
+
+.link-list li {
+  margin: 0.75rem 0 0;
+}
+
+.link-list a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 1.25rem;
+  border: 1px solid var(--line);
+  border-radius: 1.25rem;
+  background: #fff;
+  text-decoration: none;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.link-list a::after {
+  content: "\2192";
+  color: var(--sage);
+  font-size: 1.1rem;
+}
+
+.link-list a:hover {
+  border-color: var(--lavender);
+  background: #f3f0fa;
+}
+
+.sub {
+  margin: 1.4rem 0 0;
+  font-family: var(--sans);
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.contact {
+  margin-top: 3rem;
+  padding: 1.25rem 1.5rem;
+  border: 1px solid var(--line);
+  border-radius: 1.25rem;
+  background: #fff;
+}
+
+.contact h2 {
+  margin-top: 0;
+}
+
+.lang-switch {
+  margin-top: 2.5rem;
+  font-size: 0.9375rem;
+  color: var(--muted);
+}
+
+/* Language panes on the homepage. English is the default; #fr shows through :target, with no script. */
+
+.lang-pane {
+  display: none;
+  width: 100%;
+  /* Keeps the page at the top when #fr is targeted, instead of scrolling the pane into view. */
+  scroll-margin-top: 40rem;
+}
+
+#en {
+  display: block;
+}
+
+#fr:target {
+  display: block;
+}
+
+#fr:target ~ #en {
+  display: none;
+}
+
+.home .draft {
+  max-width: 26rem;
+  margin: 2.5rem auto 0;
+  text-align: left;
+}
+
+/* Homepage language switch: English is active until #fr is targeted. Falls back to unhighlighted where :has() is missing. */
+
+.lang a[href="#en"] {
+  background: var(--sage);
+  color: var(--ink);
+}
+
+body:has(#fr:target) .lang a[href="#en"] {
+  background: transparent;
+  color: var(--muted);
+}
+
+body:has(#fr:target) .lang a[href="#fr"] {
+  background: var(--sage);
+  color: var(--ink);
+}
+
+/* Footer */
+
+.site-footer {
+  padding: 2rem 0 2.5rem;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 0.875rem;
+  text-align: center;
+}
+
+.site-footer p {
+  margin: 0.25rem 0 0;
+}
+
+@media (max-width: 30rem) {
+  body {
+    font-size: 1rem;
+  }
+
+  .site-header {
+    flex-wrap: wrap;
+  }
+
+  .home {
+    padding-top: 3rem;
+  }
+}
+
+@media print {
+  .lang,
+  .doc-nav,
+  .site-footer {
+    display: none;
+  }
+
+  body {
+    background: #fff;
+  }
+}
+
+/* Keyboard users: a link to the main content that appears only while it has focus. */
+.skip {
+  position: absolute;
+  left: -999px;
+  top: 0;
+}
+
+.skip:focus {
+  left: 1rem;
+  top: 1rem;
+  z-index: 10;
+  padding: 0.5rem 0.9rem;
+  border-radius: 0.5rem;
+  background: var(--cream);
+  box-shadow: 0 0 0 2px #A8BFA8;
+}
